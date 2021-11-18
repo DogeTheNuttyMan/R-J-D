@@ -515,7 +515,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.10737471, y: 0, z: 0, w: 0.99421865}
-  m_LocalPosition: {x: 0, y: 2, z: -10}
+  m_LocalPosition: {x: 0, y: 3, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -550,6 +550,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e5f3f1e99d32b4aaed0de1ef230966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstaclePrefabs:
+  - {fileID: 8911104050268037655, guid: 1b9b4e1465abeda4d8ed8a1049759d98, type: 3}
+  - {fileID: 1815816951941793775, guid: 8a8b96b0e7609ac478e5a5a120280d58, type: 3}
+  - {fileID: 7996749691717429380, guid: 02a6f6a54a39bfd44b22624f4ad4a88c, type: 3}
   wallPrefab: {fileID: 8911104050268037655, guid: 1b9b4e1465abeda4d8ed8a1049759d98, type: 3}
   tallBarrierPrefab: {fileID: 1815816951941793775, guid: 8a8b96b0e7609ac478e5a5a120280d58, type: 3}
   barrierPrefab: {fileID: 7996749691717429380, guid: 02a6f6a54a39bfd44b22624f4ad4a88c, type: 3}
