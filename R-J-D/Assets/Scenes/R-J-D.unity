@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 649468399}
   m_Layer: 0
   m_Name: Road
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,7 +421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feff1cfccb1a42e49ac49c95088798d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canJump: 1
+  onRoad: 0
+  gameOver: 0
 --- !u!54 &774287366
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -433,7 +434,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -550,13 +551,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e5f3f1e99d32b4aaed0de1ef230966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefabs:
-  - {fileID: 8911104050268037655, guid: 1b9b4e1465abeda4d8ed8a1049759d98, type: 3}
-  - {fileID: 1815816951941793775, guid: 8a8b96b0e7609ac478e5a5a120280d58, type: 3}
+  barrierPrefabs:
   - {fileID: 7996749691717429380, guid: 02a6f6a54a39bfd44b22624f4ad4a88c, type: 3}
-  wallPrefab: {fileID: 8911104050268037655, guid: 1b9b4e1465abeda4d8ed8a1049759d98, type: 3}
-  tallBarrierPrefab: {fileID: 1815816951941793775, guid: 8a8b96b0e7609ac478e5a5a120280d58, type: 3}
-  barrierPrefab: {fileID: 7996749691717429380, guid: 02a6f6a54a39bfd44b22624f4ad4a88c, type: 3}
+  - {fileID: 1815816951941793775, guid: 8a8b96b0e7609ac478e5a5a120280d58, type: 3}
+  - {fileID: 8911104050268037655, guid: 1b9b4e1465abeda4d8ed8a1049759d98, type: 3}
 --- !u!4 &1529383196
 Transform:
   m_ObjectHideFlags: 0

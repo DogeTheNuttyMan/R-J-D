@@ -5,22 +5,24 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
-    public bool canJump;
+    public bool onRoad;
+    public bool gameOver = false;
+    private PlayerController playerControllerScript;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
-        canJump = true;
+        onRoad = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Left
-        if (canJump && Input.GetKeyDown(KeyCode.LeftArrow))
+        if (onRoad && Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            playerRb.AddForce(Vector3.left * 7, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.left * 3, ForceMode.Impulse);
         }
 
         if(transform.position.x < -3)
@@ -29,9 +31,9 @@ public class PlayerController : MonoBehaviour
         }
 
         //Right
-        if (canJump && Input.GetKeyDown(KeyCode.RightArrow))
+        if (onRoad && Input.GetKeyDown(KeyCode.RightArrow))
         {
-            playerRb.AddForce(Vector3.right * 7, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.right * 3, ForceMode.Impulse);
 
         }
 
@@ -45,19 +47,20 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -7);
         }
-
-        //Jump
-        if (canJump == true && Input.GetKeyDown(KeyCode.UpArrow)) 
-        {
-            playerRb.AddForce(Vector3.up * 6, ForceMode.Impulse);
-        }
     }
 
-    void OnCollisionEnter(Collision collison) 
+    void OnCollisionEnter(Collision collision)
     {
-        if (collison.gameObject.name == "Road")
+        if (collision.gameObject.CompareTag("Road"))
         {
-            canJump = true;
+            onRoad = true;
+        }
+
+        else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            gameOver = true;
+            GetComponent<Rigidbody>().isKinematic = true;
+            Debug.Log("Game Over!");
         }
     }
 
@@ -65,7 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collison.gameObject.name == "Road")
         {
-            canJump = false;
+            onRoad = false;
         }
     }
 }
